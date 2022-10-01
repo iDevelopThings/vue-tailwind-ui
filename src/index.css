@@ -2,17 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+	--form-label-color         : rgb(71 85 105);
+	--form-error-color         : rgb(239 68 68);
+	--form-control-ring-color  : rgb(59 130 246);
+	--form-control-background  : rgb(255 255 255);
+	--form-control-placeholder : rgb(148 163 184);
+	--form-control-color       : rgb(71 85 105);
+
+	--form-help-block-color    : rgb(71 85 105);
+
+	@media (prefers-color-scheme : dark) {
+		--form-label-color         : rgb(148 163 184);
+		--form-control-ring-color  : rgb(59 130 246);
+		--form-control-background  : rgb(30 41 59);
+		--form-control-placeholder : rgb(148 163 184);
+		--form-control-color       : rgb(226 232 240);
+
+		--form-help-block-color    : rgb(148 163 184);
+	}
+}
+
 .form-label {
-	@apply uppercase text-slate-600 dark:text-slate-400 text-xs font-bold;
+	@apply uppercase text-xs font-bold;
+	color : var(--form-label-color);
 }
 
 .form-control {
 	border                     : 0;
-	@apply shadow outline-none bg-white dark:bg-slate-800;
+	background-color           : var(--form-control-background);
+	color                      : var(--form-control-color);
 	transition-property        : all;
 	transition-timing-function : cubic-bezier(.4, 0, .2, 1);
 	transition-duration        : .15s;
-	@apply px-3 py-2 placeholder-slate-400 dark:placeholder-slate-400 dark:text-slate-200 text-slate-600 text-sm w-full;
+	@apply px-3 py-2 text-sm w-full shadow outline-none;
+
+	&::placeholder {
+		color : var(--form-control-placeholder);
+	}
 
 	&.no-rounding-bottom {
 		border-bottom-left-radius  : 0 !important;
@@ -24,11 +51,13 @@
 	}
 
 	&:focus, &:focus-visible {
-		@apply ring-4 ring-blue-500;
+		--tw-ring-opacity : 1;
+		--tw-ring-color   : rgb(var(--form-control-ring-color) / var(--tw-ring-opacity));
+		@apply ring-4;
 	}
 
 	&.darker {
-		@apply bg-slate-50 border border-gray-300;
+	//@apply bg-slate-50 border border-gray-300;
 	}
 
 	&.with-icon {
@@ -40,7 +69,8 @@
 	@apply mb-3 flex flex-col transition-all;
 
 	label {
-		@apply uppercase text-slate-600 dark:text-slate-400  text-xs font-bold;
+		color : var(--form-label-color);
+		@apply uppercase text-xs font-bold;
 		@apply block mb-2 transition-all;
 	}
 
@@ -50,16 +80,19 @@
 
 	&.has-error {
 		label, .help-block {
-			@apply text-red-500;
+			color : var(--form-error-color);
 		}
 
 		.form-control {
-			@apply ring-2 ring-red-500;
+			--tw-ring-opacity : 1;
+			--tw-ring-color   : rgb(var(--form-error-color) / var(--tw-ring-opacity));
+			@apply ring-2;
 		}
 	}
 
 	.help-block {
-		@apply mt-2 mb-1 block text-slate-600 dark:text-slate-400 text-xs;
+		color : var(--form-help-block-color);
+		@apply mt-2 mb-1 block text-xs;
 	}
 
 	input[type="date"], input[type="datetime-local"] {
@@ -70,7 +103,8 @@
 		label {
 			&:after {
 				content : "*";
-				@apply text-red-500 font-semibold ml-1;
+				color : var(--form-error-color);
+				@apply font-semibold ml-1;
 			}
 		}
 	}
