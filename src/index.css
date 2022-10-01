@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.form-label {
+	@apply uppercase text-slate-600 dark:text-slate-400 text-xs font-bold;
+}
+
+.form-control {
+	border                     : 0;
+	@apply shadow outline-none bg-white dark:bg-slate-800;
+	transition-property        : all;
+	transition-timing-function : cubic-bezier(.4, 0, .2, 1);
+	transition-duration        : .15s;
+	@apply px-3 py-2 placeholder-slate-400 dark:placeholder-slate-400 dark:text-slate-200 text-slate-600 text-sm w-full;
+
+	&.no-rounding-bottom {
+		border-bottom-left-radius  : 0 !important;
+		border-bottom-right-radius : 0 !important;
+	}
+
+	&:disabled {
+		@apply opacity-50 cursor-not-allowed;
+	}
+
+	&:focus, &:focus-visible {
+		@apply ring-4 ring-blue-500;
+	}
+
+	&.darker {
+		@apply bg-slate-50 border border-gray-300;
+	}
+
+	&.with-icon {
+		@apply pl-11 pr-11;
+	}
+}
+
+.form-group {
+	@apply mb-3 flex flex-col transition-all;
+
+	label {
+		@apply uppercase text-slate-600 dark:text-slate-400  text-xs font-bold;
+		@apply block mb-2 transition-all;
+	}
+
+	&.no-end-space {
+		margin-bottom : 0 !important;
+	}
+
+	&.has-error {
+		label, .help-block {
+			@apply text-red-500;
+		}
+
+		.form-control {
+			@apply ring-2 ring-red-500;
+		}
+	}
+
+	.help-block {
+		@apply mt-2 mb-1 block text-slate-600 dark:text-slate-400 text-xs;
+	}
+
+	input[type="date"], input[type="datetime-local"] {
+		line-height : 1.15rem !important;
+	}
+
+	&.required {
+		label {
+			&:after {
+				content : "*";
+				@apply text-red-500 font-semibold ml-1;
+			}
+		}
+	}
+
+	.form-control {
+		@apply shadow-md;
+	}
+
+	.form-check {
+		@apply flex flex-row items-center space-x-2;
+
+		label {
+			@apply mb-0 text-sm;
+		}
+	}
+}
+
+.form-control:last-of-type {
+	.preview {
+		border-bottom : 0 !important;
+	}
+}
