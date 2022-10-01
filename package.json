@@ -27,15 +27,15 @@
       "import": "./tailwind-plugin.cjs",
       "require": "./tailwind-plugin.cjs"
     },
-    "./css": {
-      "import": "./src/index.css",
-      "require": "./src/index.css"
+    "./src/components.css": {
+      "import": "./src/components.css",
+      "require": "./src/components.css"
     }
   },
   "files": [
     "dist/**/*",
     "tailwind-plugin.cjs",
-    "src/index.css"
+    "src/components.css"
   ],
   "scripts": {
     "dev": "vite",
