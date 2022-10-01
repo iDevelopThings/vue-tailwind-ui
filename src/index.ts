@@ -1,8 +1,14 @@
-export * as Spinner from './Vue/Spinner.vue';
-export * as Link from './Vue/Link.vue';
-export * as SpinnerButton from './Vue/SpinnerButton.vue';
-export * as FormInput from './Vue/Forms/FormInput.vue';
+import Link from "./Vue/Link.vue";
+import Spinner from "./Vue/Spinner.vue";
+import SpinnerButton from './Vue/SpinnerButton.vue';
+import FormInput from './Vue/Forms/FormInput.vue';
+
+export {
+	Link,
+	Spinner,
+	SpinnerButton,
+	FormInput
+};
+
 export * from './Vue/Forms/Inertia/InertiaUseForm';
 export * from './Vue/Forms/FormUtils';
-
-export {};
