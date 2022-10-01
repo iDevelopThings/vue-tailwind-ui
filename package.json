@@ -24,8 +24,8 @@
   "exports": {
     ".": "dist/index.js",
     "./tailwind-plugin": {
-      "import": "./tailwind-plugin.js",
-      "require": "./tailwind-plugin.js"
+      "import": "./tailwind-plugin.cjs",
+      "require": "./tailwind-plugin.cjs"
     },
     "./css": {
       "import": "./src/index.css",
@@ -34,7 +34,7 @@
   },
   "files": [
     "dist/**/*",
-    "tailwind-plugin.js",
+    "tailwind-plugin.cjs",
     "src/index.css"
   ],
   "scripts": {
