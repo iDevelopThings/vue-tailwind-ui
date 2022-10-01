@@ -56,10 +56,6 @@ html {
 		@apply ring-4;
 	}
 
-	&.darker {
-	//@apply bg-slate-50 border border-gray-300;
-	}
-
 	&.with-icon {
 		@apply pl-11 pr-11;
 	}
