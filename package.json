@@ -1,5 +1,5 @@
 {
-  "name": "vue-tailwind-ui",
+  "name": "@idevelopthings/vue-tailwind-ui",
   "type": "module",
   "description": "Some vue/tailwind/inertia stuff I seem to be copying from project to project.",
   "author": {
