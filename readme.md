@@ -23,13 +23,22 @@ module.exports = {
 
 
 ## Form CSS Helper
-Add this import to your main index.ts/js
-```js
-import '@idevelopthings/vue-tailwind-ui/css';
+Update your main tailwind css file to include the import:
+
+```css
+
+@import "@idevelopthings/vue-tailwind-ui/src/components.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 ```
 
+**Note:** The import must come before @tailwind directives, read the tailwind docs for more information
+
 ### Vue example:
-```vuejs
+```vue
 <div class="form-group" :class="{'has-error' : form.errors?.name}">
     <label for="name" class="control-label">Name</label>
     <input id="name"
