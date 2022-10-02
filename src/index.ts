@@ -14,7 +14,7 @@ export * from './Vue/Forms/Inertia/InertiaUseForm';
 export * from './Vue/Forms/FormUtils';
 
 
-export * from './Vue/EventBus/Events';
+export type {} from './Vue/EventBus/Events';
 export {emitEvent, useEvent, EventBusPlugin, EventBus} from './Vue/EventBus/EventBus';
 export {type EventsMap} from './Vue/EventBus/EventsMap';
 
