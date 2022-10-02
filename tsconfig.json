@@ -14,7 +14,11 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "noEmit": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": [
+      "./src/event-bus.d.ts",
+      "./src/vue.d.ts"
+    ]
   },
   "include": [
     "src"

@@ -1,5 +1,10 @@
-import { createApp } from 'vue'
-import App from './TestComponents.vue'
-import './components.css'
+import {createApp} from 'vue';
+import App from './TestComponents.vue';
+import './components.css';
+import {EventBusPlugin} from "./Vue/EventBus/EventBus";
 
-createApp(App).mount('#app')
+const app = createApp(App);
+
+app.use(EventBusPlugin);
+
+app.mount('#app');

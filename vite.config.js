@@ -20,7 +20,7 @@ export default defineConfig({
 			formats  : ['es', 'cjs', 'umd', 'iife'],
 		},
 		rollupOptions : {
-			external : ['vue', '@inertiajs/inertia', '@inertiajs/inertia-vue3', 'lodash', 'axios', '@heroicons/vue'],
+			external : ['vue', '@inertiajs/inertia', '@inertiajs/inertia-vue3', 'lodash', 'axios', '@heroicons/vue', 'mitt'],
 			output   : {
 				globals : {
 					vue                       : 'Vue',
@@ -29,6 +29,7 @@ export default defineConfig({
 					lodash                    : '_',
 					axios                     : 'axios',
 					'@heroicons/vue'          : 'HeroiconsVue',
+					mitt                      : 'mitt',
 				},
 			},
 		},
