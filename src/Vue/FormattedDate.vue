@@ -6,6 +6,7 @@
 import {ref, computed} from "vue";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+import {useTime} from "./DatePlugin";
 
 dayjs.extend(relativeTime);
 
@@ -17,7 +18,7 @@ const props = withDefaults(defineProps<{
 });
 
 const date          = computed(() => dayjs(props.date));
-const dateDiff      = computed(() => dayjs().to(date.value));
+const dateDiff      = computed(() => dayjs(useTime()).to(date.value));
 const dateFormatted = computed(() => date.value.format(props.format));
 
 </script>

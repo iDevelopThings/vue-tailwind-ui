@@ -1,6 +1,10 @@
 <template>
 	<div class="max-w-3xl mx-auto py-12 flex flex-col space-y-4 divide-y divide-slate-400 max-h-screen h-screen justify-center items-center">
 		<div class="w-full">
+			<p class="text-lg">Formatted Date</p>
+			<FormattedDate :date="new Date().toLocaleString()"/>
+		</div>
+		<div class="w-full">
 			<p class="text-lg">Events</p>
 
 			<TestEvents/>
@@ -55,5 +59,6 @@
 <script lang="ts" setup>
 import TestEvents from './TestEvents.vue';
 import TestStore from "./TestStore.vue";
+import FormattedDate from "./Vue/FormattedDate.vue";
 
 </script>
