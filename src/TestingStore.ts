@@ -5,7 +5,8 @@ interface IStore {
 	counter: number;
 }
 
-export const testStore = Store(class {
+class TestStore {
+
 	get state(): IStore {
 		return {
 			name    : '',
@@ -17,9 +18,21 @@ export const testStore = Store(class {
 		return "hello";
 	}
 
+	doSomethingElse(value: boolean): string {
+		return "hello";
+	}
+
+	get namepls() {
+		return this.state.name;
+	}
+
 	updateCounterAndName() {
 		this.state.counter++;
 		this.state.name = 'hello ' + this.state.counter;
 	}
 
-}, {history : true});
+}
+
+export const testStore = Store(TestStore);
+
+console.log('Created store: ', testStore);

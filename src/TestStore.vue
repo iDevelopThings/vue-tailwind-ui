@@ -4,12 +4,18 @@
 			Increment
 		</button>
 
+		<input type="text" class="form-control" v-model="testStore.$name">
+
 		<p>Data:</p>
-		<pre>{{ testStore.getName }}</pre>
+		<pre>{{ testStore.$name }}</pre>
+		<pre>{{ testStore.state.name }}</pre>
+		<pre>{{ testStore.namepls }}</pre>
 	</div>
 </template>
 
 <script setup lang="ts">
 import {testStore} from "./TestingStore";
+
+//console.log(testStore);
 
 </script>
